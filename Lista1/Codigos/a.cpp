@@ -11,6 +11,7 @@ int main(){
     // rotação dos pontos dado um ângulo
     a2 = (a*cos(rad)) - (b*sin(rad)); 
     b2 = (a*sin(rad)) + (b*cos(rad));
+    // define as casas decimais da saída
     cout << fixed << setprecision(15);
     cout << a2 << ' ' << b2;
     return 0;
