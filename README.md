@@ -1,3 +1,3 @@
-# TEP
+# Competitive-Programming
 
-Repositório destinado às listas de exercícios e às provas da disciplina de Tópicos Especiais em Programação (TEP)
+Repositório destinado à resolução de problemas de programação competitiva
