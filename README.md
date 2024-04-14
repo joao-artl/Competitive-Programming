@@ -1,3 +1,3 @@
 # Competitive-Programming
 
-Repositório destinado à resolução de problemas de programação competitiva
+Repositório destinado à resolução de exercícios de programação competitiva
