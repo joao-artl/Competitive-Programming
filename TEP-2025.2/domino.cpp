@@ -8,4 +8,5 @@ int main(){
     cin >> N;
     N = ((N + 1) * (N + 2) / 2);
     cout << N << "\n";
+    return 0;
 }
