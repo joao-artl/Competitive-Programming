@@ -1,0 +1,36 @@
+name: Generate Notebook (PDF)
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Notebook/algorithms/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Notebook/algorithms/**'
+
+jobs:
+  notebook:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create Notebook
+        uses: addnab/docker-run-action@v3
+        with:
+            image: mateusvrs/cp-notebook:v1.0
+            options: -w /usr/src/app -v ${{ github.workspace }}:/usr/src/app
+            run: make pdf
+
+      - name: Notebook Update - Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v5 
+        with:
+          file_pattern: 'notebook.pdf'
+          commit_message: "notebook(pdf): update to latest version"
