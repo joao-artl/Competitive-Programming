@@ -10,6 +10,7 @@ int main()
     vet.pop_back(); // Remove ultimo valor do vetor
     vet.size(); // Retorna tamanho do vetor
     vet.clear(); // Remove todos os elementos mas não libera a memória alocada
+    sort(vet.begin(), vet.end()) // Ordenação, greater<int> para colocar em ordem decrescente
 
     vector<vector<int>> matriz(n, vector<int>(n, -2)); // Declara Matriz de tamanho NxN
     for (int i = 0; i < n; i++) {           // percorre as linhas
