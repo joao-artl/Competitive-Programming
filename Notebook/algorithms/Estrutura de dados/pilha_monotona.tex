@@ -1,0 +1,24 @@
+\noindent
+\textbf{Pilha monótona}
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+Seja $P$ uma pilha de elementos do tipo $T$. A pilha $P$ é dita \textbf{monótona} se, quando extraídos todos os elementos de $P$, eles formam uma sequência $x_1, x_2, \ldots, x_N$, onde $x_i$ é o elemento obtido na $i$-ésima extração, tais que a função $F : \mathbb{N} \to T$, com $f(i) = x_i$, é monótona.
+A pilha $P$ será \textbf{não-decrescente} se $f$ for \textbf{não-crescente}; caso contrário, $P$ será \textbf{não-decrescente}.
+
+
+\begin{itemize}
+    \item É possível determinar o maior elemento à esquerda para todos os elementos de uma sequência $a_1, a_2, \ldots, a_N$ em $O(N^2)$ por meio de uma busca completa.
+
+    \item Para cada índice $i$, é preciso avaliar todos os elementos $a_j$, com $j = 1, 2, \ldots, i-1$.
+
+    \item Contudo, é possível determinar estes valores em $O(N)$ com uma modificação no método de inserção de uma pilha não-crescente.
+
+    \item A inserção em uma pilha não-crescente ocorre em duas etapas: manutenção do invariante e inserção do novo elemento.
+
+    \item Finalizada a manutenção do invariante, os elementos que restam na pilha são todos maiores do que $a_i$ e o elemento do topo será o maior elemento à esquerda de $a_i$.
+
+    \item Em algumas implementações são mantidos os índices e não os valores da sequência propriamente ditos (ou pares com ambas informações).
+\end{itemize}
