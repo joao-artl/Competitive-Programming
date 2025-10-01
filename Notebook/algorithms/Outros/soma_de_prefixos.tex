@@ -1,0 +1,15 @@
+\section*{Soma de Prefixos}
+
+\textbf{Soma de prefixos} é um método que permite calcular a soma de qualquer subvetor contínuo em tempo constante, $O(1)$.
+
+Dado um vetor $A$ de tamanho $N$, seu vetor de soma de prefixos, $P$, é definido tal que $P[i]$ contém a soma de todos os elementos desde $A[0]$ até $A[i]$.
+
+\begin{itemize}
+    
+    \item \textbf{Cálculo Eficiente:} O vetor $P$ pode ser calculado em tempo linear, $O(N)$, utilizando a seguinte recorrência:
+    $$ P[i] = P[i-1] + A[i], \quad \text{com o caso base } P[0] = A[0] $$
+
+    \item \textbf{Aplicação Principal:} A soma de um subvetor de $A$ do índice $i$ ao $j$ (inclusive) é calculada em tempo $O(1)$ da seguinte forma:
+    $$ \text{soma}(A[i \ldots j]) = P[j] - P[i-1] $$
+    Para o caso especial em que $i=0$, a soma é simplesmente $P[j]$.
+\end{itemize}
