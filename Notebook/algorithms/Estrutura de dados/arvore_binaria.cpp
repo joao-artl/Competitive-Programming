@@ -59,7 +59,6 @@ int main()
 
     m.erase("maca"); // Remove o par com a chave "maca"
 
-
     // Assim como o set, o map não tem acesso por índice numérico
     // m.begin() aponta para o par chave-valor com a menor chave (ordem alfabética/numérica)
     // Para ver o Primeiro par (chave/valor)
