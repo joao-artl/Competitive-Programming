@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    // SET
+    // Set
     set<int> s;
 
     s.insert(10); // Adiciona o elemento
@@ -28,7 +28,24 @@ int main()
         cout << "Elemento 20 encontrado!" << endl;
     }
 
-    // MAP
+    // Para ver o Primeiro elemento (o menor de todos)
+    int primeiro_elemento = *s.begin();
+    cout << "O primeiro elemento (menor) do set é: " << primeiro_elemento << endl;
+
+    // Para ver o Último elemento (o maior de todos)
+    // s.rbegin() é um iterador reverso que aponta para o maior elemento
+    int ultimo_elemento = *s.rbegin();
+    cout << "O último elemento (maior) do set é: " << ultimo_elemento << endl;
+
+    // Para ver um elemento em uma posição "N" (ex: o segundo elemento, na posição 1)
+    int posicao_desejada = 1; // 0 é o primeiro, 1 é o segundo...
+    if (s.size() > posicao_desejada) {
+        auto it_posicao = std::next(s.begin(), posicao_desejada);
+        cout << "O elemento na posicao " << posicao_desejada << " do set é: " << *it_posicao << endl;
+    }
+
+
+    // Map
     map<string, int> m;
 
     m["banana"] = 10;   // Adiciona/atualiza o par {"banana", 10}
@@ -42,7 +59,22 @@ int main()
 
     m.erase("maca"); // Remove o par com a chave "maca"
 
-    // MULTISET
+
+    // Assim como o set, o map não tem acesso por índice numérico
+    // m.begin() aponta para o par chave-valor com a menor chave (ordem alfabética/numérica)
+    // Para ver o Primeiro par (chave/valor)
+    auto it_primeiro = m.begin();
+    cout << "O primeiro par do map é: Chave='" << it_primeiro->first << "', Valor=" << it_primeiro->second << endl;
+
+    // Para ver o par em uma posição "N" (ex: o terceiro par, na posição 2)
+    int posicao_desejada = 2;
+    if (m.size() > posicao_desejada) {
+        auto it_posicao = std::next(m.begin(), posicao_desejada);
+        cout << "O par na posicao " << posicao_desejada << " do map é: Chave='" << it_posicao->first << "', Valor=" << it_posicao->second << endl;
+    }
+
+
+    // Multiset
     multiset<int> ms;
 
     ms.insert(10);
@@ -63,6 +95,7 @@ int main()
     if (it_ms != ms.end()) {
         ms.erase(it_ms); // Remove apenas o elemento apontado pelo iterador
     }
+
 
     // Multimap
     multimap<string, int> mm;
